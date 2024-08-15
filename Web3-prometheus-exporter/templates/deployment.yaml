@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{.Release.Name}}-deployment
+  labels:
+    app: {{.Release.Name}}
+spec:
+  replicas: {{ .Values.deployment.replicas }}
+  revisionHistoryLimit: {{.Values.deployment.revisionHistoryLimit}}
+  selector:
+    matchLabels:
+      app: {{.Release.Name}}
+  template:
+    metadata:
+      labels:
+        app: {{.Release.Name}}
+      annotations:
+        checksum/config: {{ include (print $.Template.BasePath "/app-configmap.yaml") . | sha256sum}}
+    spec:
+      containers:
+      - name: web3-prometheus-exporter
+        image: {{.Values.deployment.image.repository}}:{{.Values.deployment.image.tag}}
+        ports:
+        - containerPort: {{.Values.deployment.endpoint.port}}
+          name: http
+        volumeMounts:
+        - name: config
+          mountPath: /app/config.yaml
+          subPath: config.yaml
+        env:
+        - name: WEB3_PROMETHEUS_EXPORTER_PORT
+          value: "{{.Values.deployment.endpoint.port}}"
+        - name: WEB3_PROMETHEUS_EXPORTER_BIND_ADDR
+          value: "0.0.0.0"
+        - name: WEB3_PROMETHEUS_EXPORTER_QUERY_TIMEOUT
+          value: "60"
+      volumes:
+      - name: config
+        configMap:
+          name: {{.Release.Name}}-config

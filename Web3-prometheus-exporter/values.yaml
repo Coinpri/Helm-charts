@@ -1,0 +1,26 @@
+deployment:
+  image:
+    repository: guillh/web3-prometheus-exporter
+    tag: 0.1.6
+  replicas: 1
+  revisionHistoryLimit: 3
+  endpoint:
+    port: 8990
+
+prometheus:
+  serviceMonitor:
+    enabled: false
+
+
+config: |
+  assets:
+  - id: ethereum_expample
+    blockchain:
+      name: "Ethereum Mainnet"
+      rpc_url: "https://rpc.ankr.com/eth"
+    module: "evm_native"
+    name: ETH
+    decimals: 18
+    accounts:
+      - address: "0x0000000000000000000000000000000000000000"
+        name: "Address Zero"
