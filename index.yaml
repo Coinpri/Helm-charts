@@ -1,0 +1,12 @@
+apiVersion: v1
+entries:
+  web3-prometheus-exporter:
+  - apiVersion: v2
+    appVersion: 0.1.6
+    created: "2024-08-16T01:28:56.998234063+02:00"
+    digest: aca6cf69a4201fc579c3e346aca39ce1a4b91c5c9a626eae36da0d3751149370
+    name: web3-prometheus-exporter
+    urls:
+    - https://Coinpri.github.io/Helm-charts/web3-prometheus-exporter-0.0.1.tgz
+    version: 0.0.1
+generated: "2024-08-16T01:28:56.998029601+02:00"
