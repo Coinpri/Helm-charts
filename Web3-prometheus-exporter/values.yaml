@@ -1,7 +1,7 @@
 deployment:
   image:
     repository: guillh/web3-prometheus-exporter
-    tag: 0.2.0
+    tag: 0.2.2
   replicas: 1
   revisionHistoryLimit: 3
   endpoint:
