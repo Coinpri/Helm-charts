@@ -24,3 +24,17 @@ config: |
     accounts:
       - address: "0x0000000000000000000000000000000000000000"
         name: "Address Zero"
+
+extraModules: []
+# - name: example-module
+#   fileContent: |
+#     from structures import Balance, Account
+#     from typing import List
+
+#     def get_balance(rpc_url: str, account: Account) -> List[Balance] :
+#         example_balance_pending = 100
+#         example_balance_received = 420
+#         return [
+#             Balance(name="rewards-pending", value=example_balance_pending),
+#             Balance(name="rewards-received", value=example_balance_received)
+#         ]
