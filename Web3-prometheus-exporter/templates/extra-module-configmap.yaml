@@ -1,0 +1,12 @@
+{{- $releaseName := .Release.Name}}
+{{- range .Values.extraModules}}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{$releaseName}}-{{ .name }}-module
+  labels:
+    app: {{$releaseName}}
+data:
+  {{.name}}.py: |
+    {{- .fileContent | nindent 4}}
+{{- end}}

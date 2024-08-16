@@ -1,19 +1,20 @@
+{{- $releaseName := .Release.Name}}
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{.Release.Name}}-deployment
+  name: {{$releaseName}}-deployment
   labels:
-    app: {{.Release.Name}}
+    app: {{$releaseName}}
 spec:
   replicas: {{ .Values.deployment.replicas }}
   revisionHistoryLimit: {{.Values.deployment.revisionHistoryLimit}}
   selector:
     matchLabels:
-      app: {{.Release.Name}}
+      app: {{$releaseName}}
   template:
     metadata:
       labels:
-        app: {{.Release.Name}}
+        app: {{$releaseName}}
       annotations:
         checksum/config: {{ include (print $.Template.BasePath "/app-configmap.yaml") . | sha256sum}}
     spec:
@@ -27,6 +28,11 @@ spec:
         - name: config
           mountPath: /app/config.yaml
           subPath: config.yaml
+        {{- range .Values.extraModules}}
+        - name: {{.name }}-module
+          mountPath: /app/targets/{{.name}}.py
+          subPath: {{.name}}.py
+        {{- end}}
         env:
         - name: WEB3_PROMETHEUS_EXPORTER_PORT
           value: "{{.Values.deployment.endpoint.port}}"
@@ -37,4 +43,9 @@ spec:
       volumes:
       - name: config
         configMap:
-          name: {{.Release.Name}}-config
+          name: {{$releaseName}}-config
+      {{- range .Values.extraModules}}
+      - name: {{.name}}-module
+        configMap:
+          name: {{$releaseName}}-{{.name}}-module
+      {{- end}}
