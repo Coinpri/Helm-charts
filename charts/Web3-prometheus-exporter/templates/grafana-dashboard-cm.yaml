@@ -24,7 +24,7 @@ data:
       "editable": true,
       "fiscalYearStartMonth": 0,
       "graphTooltip": 0,
-      "id": 30,
+      "id": 2,
       "links": [],
       "panels": [
         {
@@ -90,7 +90,7 @@ data:
             "textMode": "auto",
             "wideLayout": true
           },
-          "pluginVersion": "11.1.0",
+          "pluginVersion": "11.2.0",
           "targets": [
             {
               "datasource": {
@@ -158,7 +158,7 @@ data:
             "showThresholdMarkers": true,
             "sizing": "auto"
           },
-          "pluginVersion": "11.1.0",
+          "pluginVersion": "11.2.0",
           "targets": [
             {
               "datasource": {
@@ -223,7 +223,7 @@ data:
             "textMode": "auto",
             "wideLayout": true
           },
-          "pluginVersion": "11.1.0",
+          "pluginVersion": "11.2.0",
           "targets": [
             {
               "datasource": {
@@ -293,7 +293,7 @@ data:
             "textMode": "name",
             "wideLayout": true
           },
-          "pluginVersion": "11.1.0",
+          "pluginVersion": "11.2.0",
           "targets": [
             {
               "datasource": {
@@ -375,7 +375,7 @@ data:
               }
             ]
           },
-          "pluginVersion": "11.1.0",
+          "pluginVersion": "11.2.0",
           "targets": [
             {
               "datasource": {
@@ -511,7 +511,7 @@ data:
             "textMode": "name",
             "wideLayout": true
           },
-          "pluginVersion": "11.1.0",
+          "pluginVersion": "11.2.0",
           "targets": [
             {
               "datasource": {
@@ -565,6 +565,7 @@ data:
                 "axisLabel": "",
                 "axisPlacement": "right",
                 "barAlignment": 0,
+                "barWidthFactor": 0.6,
                 "drawStyle": "line",
                 "fillOpacity": 28,
                 "gradientMode": "opacity",
@@ -673,6 +674,7 @@ data:
                 "axisLabel": "",
                 "axisPlacement": "auto",
                 "barAlignment": 0,
+                "barWidthFactor": 0.6,
                 "drawStyle": "line",
                 "fillOpacity": 32,
                 "gradientMode": "opacity",
@@ -861,7 +863,7 @@ data:
       "timezone": "browser",
       "title": "Asset Balances",
       "uid": "fdubwa7q2itj4b",
-      "version": 45,
+      "version": 1,
       "weekStart": ""
     }
 
