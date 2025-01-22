@@ -898,7 +898,7 @@ data:
 kind: ConfigMap
 metadata:
   labels:
-    {{ .Values.grafana.dashboardsCm.extraLabels }}
+    {{ .Values.grafana.dashboardsCm.extraLabels | toYaml | nindent 4 }}
   name: {{ .Release.Name }}-grafana-dashboards
   namespace: {{ .Release.Namespace }}
 {{- end}}
