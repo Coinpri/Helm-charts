@@ -10,6 +10,10 @@ deployment:
 prometheus:
   serviceMonitor:
     enabled: false
+grafana:
+  dashboardsCm:
+    enabled: false
+    extraLabels: {}
 
 
 config: |
