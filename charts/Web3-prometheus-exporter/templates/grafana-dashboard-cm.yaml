@@ -1,7 +1,7 @@
 {{if .Values.grafana.dashboardsCm.enabled}}
 apiVersion: v1
 data:
-  web3-prometheus-exporter-assets-dashboard.yaml: |
+  web3-prometheus-exporter-assets-dashboard.json: |
   {{`
 
     {
