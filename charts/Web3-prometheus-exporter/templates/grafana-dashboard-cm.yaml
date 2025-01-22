@@ -2,56 +2,9 @@
 apiVersion: v1
 data:
   web3-prometheus-exporter-assets-dashboard.yaml: |
-    {{`{
-    "__inputs": [
-        {
-          "name": "DS_PROMETHEUS",
-          "label": "Prometheus",
-          "description": "",
-          "type": "datasource",
-          "pluginId": "prometheus",
-          "pluginName": "Prometheus"
-        }
-      ],
-      "__elements": {},
-      "__requires": [
-        {
-          "type": "panel",
-          "id": "gauge",
-          "name": "Gauge",
-          "version": ""
-        },
-        {
-          "type": "grafana",
-          "id": "grafana",
-          "name": "Grafana",
-          "version": "11.1.0"
-        },
-        {
-          "type": "datasource",
-          "id": "prometheus",
-          "name": "Prometheus",
-          "version": "1.0.0"
-        },
-        {
-          "type": "panel",
-          "id": "stat",
-          "name": "Stat",
-          "version": ""
-        },
-        {
-          "type": "panel",
-          "id": "table",
-          "name": "Table",
-          "version": ""
-        },
-        {
-          "type": "panel",
-          "id": "timeseries",
-          "name": "Time series",
-          "version": ""
-        }
-      ],
+  {{`
+
+    {
       "annotations": {
         "list": [
           {
@@ -71,7 +24,7 @@ data:
       "editable": true,
       "fiscalYearStartMonth": 0,
       "graphTooltip": 0,
-      "id": null,
+      "id": 30,
       "links": [],
       "panels": [
         {
@@ -88,7 +41,7 @@ data:
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
           "description": "",
           "fieldConfig": {
@@ -142,7 +95,7 @@ data:
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "prometheus"
               },
               "disableTextWrap": false,
               "editorMode": "code",
@@ -162,7 +115,7 @@ data:
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
           "fieldConfig": {
             "defaults": {
@@ -210,7 +163,7 @@ data:
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "prometheus"
               },
               "editorMode": "code",
               "expr": "sum((rate({asset_name=\"$asset\", __name__=~\"^web3_prometheus_exporter_.+_account_balance$\"}[24h])) * 60 * 60 * 24 / 10 ^ $decimals)",
@@ -226,7 +179,7 @@ data:
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
           "fieldConfig": {
             "defaults": {
@@ -275,7 +228,7 @@ data:
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "prometheus"
               },
               "editorMode": "code",
               "expr": "sum({asset_name=\"$asset\", __name__=~\"^web3_prometheus_exporter_.+_account_balance$\"} / 10^$decimals)",
@@ -291,7 +244,7 @@ data:
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
           "description": "",
           "fieldConfig": {
@@ -345,7 +298,7 @@ data:
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "prometheus"
               },
               "editorMode": "code",
               "expr": "sum by (blockchain_name) ({asset_name=\"$asset\", __name__=~\"^web3_prometheus_exporter_.+_account_balance$\"})",
@@ -361,7 +314,7 @@ data:
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
           "fieldConfig": {
             "defaults": {
@@ -427,7 +380,7 @@ data:
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "prometheus"
               },
               "editorMode": "code",
               "exemplar": false,
@@ -441,7 +394,7 @@ data:
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "prometheus"
               },
               "editorMode": "code",
               "exemplar": false,
@@ -510,7 +463,7 @@ data:
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
           "fieldConfig": {
             "defaults": {
@@ -563,7 +516,7 @@ data:
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "prometheus"
               },
               "disableTextWrap": false,
               "editorMode": "code",
@@ -598,7 +551,7 @@ data:
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
           "fieldConfig": {
             "defaults": {
@@ -684,7 +637,7 @@ data:
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "prometheus"
               },
               "disableTextWrap": false,
               "editorMode": "code",
@@ -706,7 +659,7 @@ data:
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
           "fieldConfig": {
             "defaults": {
@@ -784,7 +737,7 @@ data:
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "prometheus"
               },
               "disableTextWrap": false,
               "editorMode": "code",
@@ -809,10 +762,14 @@ data:
         "list": [
           {
             "allValue": "All",
-            "current": {},
+            "current": {
+              "selected": true,
+              "text": "AVL",
+              "value": "AVL"
+            },
             "datasource": {
               "type": "prometheus",
-              "uid": "${DS_PROMETHEUS}"
+              "uid": "prometheus"
             },
             "definition": "label_values({__name__=~\"^web3_prometheus_exporter_.+_account_balance$\"},asset_name)",
             "hide": 0,
@@ -834,10 +791,18 @@ data:
           },
           {
             "allValue": "All",
-            "current": {},
+            "current": {
+              "selected": true,
+              "text": [
+                "All"
+              ],
+              "value": [
+                "$__all"
+              ]
+            },
             "datasource": {
               "type": "prometheus",
-              "uid": "${DS_PROMETHEUS}"
+              "uid": "prometheus"
             },
             "definition": "label_values({__name__=~\"^web3_prometheus_exporter_.+_account_balance$\", asset_name=\"$asset\"},account)",
             "hide": 2,
@@ -858,10 +823,14 @@ data:
             "type": "query"
           },
           {
-            "current": {},
+            "current": {
+              "selected": false,
+              "text": "18",
+              "value": "18"
+            },
             "datasource": {
               "type": "prometheus",
-              "uid": "${DS_PROMETHEUS}"
+              "uid": "prometheus"
             },
             "definition": "query_result(sum by (decimals) (rate({__name__=~\"^web3_prometheus_exporter_.+_account_balance$\", asset_name=\"$asset\"}[1m])))",
             "description": "Amount of decimals for a given blockchain asset",
@@ -890,11 +859,14 @@ data:
       },
       "timepicker": {},
       "timezone": "browser",
-      "title": "Web3 Prometheus Exporter",
+      "title": "Asset Balances",
       "uid": "fdubwa7q2itj4b",
       "version": 45,
       "weekStart": ""
-    }`}}
+    }
+
+  `}}
+
 kind: ConfigMap
 metadata:
   labels:
