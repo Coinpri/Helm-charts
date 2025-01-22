@@ -3,6 +3,14 @@ entries:
   web3-prometheus-exporter:
   - apiVersion: v2
     appVersion: 0.3.0
+    created: "2025-01-22T10:45:26.181122539Z"
+    digest: 410aa730841adfc52d9ff6863e8f03e3b6fc395faa0229db06a0ea1c4f7b0c02
+    name: web3-prometheus-exporter
+    urls:
+    - https://github.com/Coinpri/Helm-charts/releases/download/web3-prometheus-exporter-0.1.3-rc8/web3-prometheus-exporter-0.1.3-rc8.tgz
+    version: 0.1.3-rc8
+  - apiVersion: v2
+    appVersion: 0.3.0
     created: "2025-01-22T10:37:53.120022162Z"
     digest: 16341701c3a0f3dd86b2b8ef2d9c8a2e3a10849504b9f9a64a455c866a64e6cf
     name: web3-prometheus-exporter
@@ -73,4 +81,4 @@ entries:
     urls:
     - https://github.com/Coinpri/Helm-charts/releases/download/web3-prometheus-exporter-0.1.1/web3-prometheus-exporter-0.1.1.tgz
     version: 0.1.1
-generated: "2025-01-22T10:37:53.120109536Z"
+generated: "2025-01-22T10:45:26.181177873Z"
